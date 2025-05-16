@@ -18,31 +18,6 @@ body.light {
   --border-color: #dddddd;
 }
 
-#themeToggle {
-  margin-left: auto;
-  background: var(--bg-color); /* kasih background solid supaya kontras */
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
-  padding: 0.5rem 1.2rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: 
-    background 0.3s ease, 
-    color 0.3s ease, 
-    box-shadow 0.3s ease;
-  box-shadow: 0 0 8px var(--accent-color); /* glow */
-  font-weight: 600;
-  user-select: none;
-}
-
-#themeToggle:hover {
-  background: var(--accent-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 12px var(--accent-color);
-}
-
-
 /* RESET DASAR */
 * {
   margin: 0;
@@ -62,19 +37,23 @@ body {
 /* THEME TOGGLE BUTTON */
 #themeToggle {
   margin-left: auto;
-  background: transparent;
+  background: var(--bg-color);
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px var(--accent-color);
+  font-weight: 600;
+  user-select: none;
 }
 
 #themeToggle:hover {
   background: var(--accent-color);
   color: var(--bg-color);
+  box-shadow: 0 0 12px var(--accent-color);
 }
 
 /* HEADER */
@@ -84,10 +63,14 @@ header {
   padding: 3rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
   box-shadow: 0 12px 32px var(--accent-glow);
+  flex-wrap: nowrap;
+  text-align: left;
+  flex-direction: row;
 }
 
 header img {
@@ -110,6 +93,50 @@ header p {
   font-size: 1.1rem;
   color: #ccfcff;
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    text-align: left;
+  }
+
+  header img {
+    width: 80px;
+    height: 80px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  #themeToggle {
+    margin-left: auto;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  #themeToggle {
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+  }
 }
 
 /* SECTION */

@@ -158,9 +158,11 @@ header p {
     font-size: 0.95rem;
   }
 
+  /* Perkecil tombol themeToggle di sini */
   #themeToggle {
-    padding: 0.4rem 1rem;
-    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
   }
 }
 
@@ -296,6 +298,8 @@ ul {
 .dok-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px var(--accent-glow);
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /* LIGHTBOX */
